@@ -90,7 +90,8 @@ class Player:
 
     def draw(self):
         pyxel.tri(self.x - 5, self.y + 4, self.x + 5, self.y + 4, self.x, self.y - 8, 10)
-        pyxel.circ(self.x, self.y, 2, 78)
+        pyxel.pset(self.x, self.y, 13)
+
         for b in self.bullets:
             b.draw()
 
@@ -222,9 +223,9 @@ class App:
             return
 
         pyxel.cls(1)
+        self.item.draw()
         self.player.draw()
         self.enemy.draw()
-        self.item.draw()
 
         pyxel.rect(0, self.height - 2, self.width, self.height, 7)
         pyxel.rect(self.enemy.x - self.enemy.r, self.height - 2, self.enemy.r * 2, self.height, 8)
